@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión | EcoStyle RD</title>
+  <link rel="stylesheet" href="CSS/eco.css">
+</head>
+<body>
+
+  <header class="login-header">
+    <div class="logo">
+      <img src="IMAGENES/ECOSTYLE.png" alt="Logo EcoStyleRD">
+      <h1>EcoStyle RD</h1>
+    </div>
+    <nav> 
+  <a href="index.html">Inicio</a>
+</nav>
+
+  </header>
+
+  <div class="login-container">
+    <h2>Iniciar Sesión</h2>
+
+    <form action="login.php" method="POST">
+
+      <label>Correo electrónico:</label>
+      <input name="CORREO" type="email" placeholder="Ingresa tu correo" required>
+
+      <label>Contraseña:</label>
+      <input name="CONTRASENA" type="password" placeholder="Ingresa tu contraseña" required>
+
+      <button type="submit" class="btn-login">Entrar</button>
+
+      <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+    </form>
+  </div>
+
+  <script src="JAVASCRIPT/auth.js"></script>
+  <script src="JAVASCRIPT/modal.js"></script>
+
+
+</body>
+</html>

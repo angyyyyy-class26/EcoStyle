@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoStyle RD - Inicio</title>
+
+  <link rel="stylesheet" href="CSS/ecostyle.css">
+  <link rel="stylesheet" href="CSS/session.css">
+  
+  <style>
+    .modal-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .modal-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    
+    .modal-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-login-modal {
+      padding: 8px 16px;
+      background: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .btn-cancelar-modal {
+      padding: 8px 16px;
+      background: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .show-modal {
+      animation: fadeIn 0.3s;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="IMAGENES/ECOSTYLE.png" alt="Logo EcoStyleRD">
+    <h1>EcoStyleRD</h1>
+  </div>
+
+  <nav class="menu">
+    <a href="acerca.html">Acerca de</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="bienvenido">
+    <h1>Bienvenido 🌿</h1>
+    <p>Bienvenido a EcoStyle RD, Belleza que nace de lo natural.</p>
+  </section>
+
+  <!-- Carrusel -->
+  <section class="small-carrusel">
+    <div class="slide">
+      <img src="IMAGENES/fondo4.jpg" class="show">
+      <img src="IMAGENES/fondo2.jpg">
+      <img src="IMAGENES/fondo6.jpg">
+    </div>
+  </section>
+
+  <!-- Categorías -->
+  <section class="categorias">
+    <div class="categorias-grid">
+
+      <article class="categoria-card">
+        <img src="IMAGENES/hogar.jpg" alt="Hogar sostenible">
+        <h3>Hogar Sostenible</h3>
+      </article>
+
+      <article class="categoria-card">
+        <img src="IMAGENES/cuidado.jpg" alt="Cuidado personal">
+        <h3>Cuidado Personal</h3>
+      </article>
+
+      <article class="categoria-card">
+        <img src="IMAGENES/alimentos.jpg" alt="Alimentos Ecológicos">
+        <h3>Alimentos Ecológicos</h3>
+      </article>
+
+    </div>
+
+    <div style="text-align:center; margin-top:25px;">
+      <button id="btnDetalles" class="btn-mas">Nuestros productos ➡️ </button>
+    </div>
+  </section>
+</main>
+
+<!-- 🌿 MODAL PARA INICIAR SESIÓN -->
+<div id="modalLogin" class="modal-container">
+  <div class="modal-box">
+      <h2>Acceso Requerido</h2>
+      <p>Para ver más detalles debes iniciar sesión.</p>
+
+      <div class="modal-buttons">
+          <a href="login.html" class="btn-login-modal">Iniciar sesión</a>
+          <button id="cancelarModal" class="btn-cancelar-modal">Cancelar</button>
+      </div>
+  </div>
+</div>
+<script src="JAVASCRIPT/modal.js"></script>
+<script>
+  const imgs = document.querySelectorAll('.small-carrusel img');
+  let index = 0;
+
+  setInterval(() => {
+    imgs.forEach(img => img.classList.remove('show'));
+    imgs[index].classList.add('show');
+    index = (index + 1) % imgs.length;
+  }, 4000); // Cambia cada 4 segundos
+
+  const logout = document.getElementById("logoutBtn");
+if (logout) {
+  logout.onclick = () => {
+    localStorage.removeItem("sesion");
+    alert("Sesión cerrada ✅");
+    window.location.reload();
+  };
+}
+</script>
+  <script src="JAVASCRIPT/auth.js"></script>
+  <script src="JAVASCRIPT/session.js"></script>
+</body>
+</html>

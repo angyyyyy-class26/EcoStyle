@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuidado personal ecológico - EcoStyle RD</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="IMAGENES/ECOSTYLE.png" alt="Logo de EcoStyleRD">
+    </div>
+    <nav class="menu">
+      <a href="EcoStyleRD.html" class="btn-inicio">Inicio</a>
+      <a href="acerca.html" class="btn-acerca">Acerca de</a>
+      <a href="servicios.html" class="btn-servicios">Nuestros Servicios</a>
+      <a href="contacto.html" class="btn-contacto">Contáctanos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalogo">
+      <aside class="filtros">
+        <form id="filters">
+          <h2>Filtrar</h2>
+          <input type="search" id="q" name="q" placeholder="Buscar por nombre..." aria-label="Buscar por nombre">
+          <select id="category" name="category" style="display:none">
+            <option value="cuidado" selected>Cuidado personal ecológico</option>
+          </select>
+          <label for="price" class="price-label">Precio máx: RD$ <output id="priceOut">1000</output></label>
+          <input type="range" id="price" name="price" min="0" max="1000" step="50" value="1000">
+          <select id="sort" name="sort">
+            <option value="relevancia">Ordenar por: Relevancia</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+            <option value="nombre-desc">Nombre: Z-A</option>
+          </select>
+          <div class="acciones">
+            <button type="submit">Aplicar</button>
+            <button type="reset" id="clearFilters">Limpiar</button>
+          </div>
+        </form>
+      </aside>
+
+      <div class="listado">
+        <div class="listado-top">
+          <h2>Cuidado personal ecológico</h2>
+          <span class="count" aria-live="polite"><strong id="resultsCount">10</strong> resultados</span>
+        </div>
+        <div class="contenedor-productos">
+          <div class="producto" data-category="cuidado" data-price="350">
+            <img src="imagenes/cuidado-champu-solido.jpg" alt="Champú sólido de romero y menta">
+            <h3>Champú sólido de romero y menta</h3>
+            <p>Precio: RD$350</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="380">
+            <img src="imagenes/cuidado-acondicionador-coco.jpg" alt="Acondicionador natural de coco">
+            <h3>Acondicionador natural de coco</h3>
+            <p>Precio: RD$380</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="220">
+            <img src="imagenes/cuidado-jabon-avena-miel.jpg" alt="Jabón artesanal de avena y miel">
+            <h3>Jabón artesanal de avena y miel</h3>
+            <p>Precio: RD$220</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="290">
+            <img src="imagenes/cuidado-desodorante-ecologico.jpg" alt="Desodorante ecológico sin aluminio">
+            <h3>Desodorante ecológico sin aluminio</h3>
+            <p>Precio: RD$290</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="320">
+            <img src="imagenes/cuidado-crema-aloe.jpg" alt="Crema hidratante con aloe vera">
+            <h3>Crema hidratante con aloe vera</h3>
+            <p>Precio: RD$320</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="400">
+            <img src="imagenes/cuidado-aceite-almendra.jpg" alt="Aceite corporal de almendra dulce">
+            <h3>Aceite corporal de almendra dulce</h3>
+            <p>Precio: RD$400</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="450">
+            <img src="imagenes/cuidado-mascarilla-argan-karite.jpg" alt="Mascarilla capilar de argán y karité">
+            <h3>Mascarilla capilar de argán y karité</h3>
+            <p>Precio: RD$450</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="120">
+            <img src="imagenes/cuidado-cepillo-bambu.jpg" alt="Cepillo dental de bambú">
+            <h3>Cepillo dental de bambú</h3>
+            <p>Precio: RD$120</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="180">
+            <img src="imagenes/cuidado-balsamo-cacao.jpg" alt="Bálsamo labial natural de cacao">
+            <h3>Bálsamo labial natural de cacao</h3>
+            <p>Precio: RD$180</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="cuidado" data-price="260">
+            <img src="imagenes/cuidado-sales-lavanda.jpg" alt="Sales de baño con lavanda">
+            <h3>Sales de baño con lavanda</h3>
+            <p>Precio: RD$260</p>
+            <button>Ver detalles</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p>© 2025 EcoStyleRD · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="JAVASCRIPT/search.js"></script>
+</body>
+</html>
+

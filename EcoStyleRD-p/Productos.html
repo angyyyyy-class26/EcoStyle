@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoStyle RD</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+   <header>
+  <div class="logo">
+    <img src="IMAGENES/ECOSTYLE.png" alt="Logo de EcoStyleRD">
+    
+  </div>
+<nav class="menu">
+  <a href="EcoStyleRD.html" class="btn-inicio">Inicio</a>
+   <a href="acerca.html" class="btn-acerca">Acerca De</a>
+  <a href="servicios.html" class="btn-servicios">Servicios</a>
+  <a href="contacto.html" class="btn-contacto">Contáctanos</a>
+  </nav>
+</header>
+    <main>
+        <section class="catalogo" aria-label="Catálogo de productos">
+            <aside class="filtros">
+                <form id="filters">
+                    <h2>Filtrar</h2>
+                    <input type="search" id="q" name="q" placeholder="Buscar por nombre..." aria-label="Buscar por nombre">
+                    <label for="price" class="price-label">Precio máx: RD$ <output id="priceOut">1000</output></label>
+                    <input type="range" id="price" name="price" min="0" max="1000" step="50" value="1000">
+                    <select id="sort" name="sort" aria-label="Ordenar">
+                        <option value="relevancia">Ordenar por: Relevancia</option>
+                        <option value="precio-asc">Precio: menor a mayor</option>
+                        <option value="precio-desc">Precio: mayor a menor</option>
+                        <option value="nombre-asc">Nombre: A-Z</option>
+                        <option value="nombre-desc">Nombre: Z-A</option>
+                    </select>
+
+                    <!-- Categorías dentro del filtro -->
+                    <fieldset class="filter-categories" style="margin-top:12px; border:none; padding:0;">
+                        <legend style="font-weight:600; margin-bottom:6px;">Categoría</legend>
+                        <label><input type="radio" name="categoryFilter" value="all" checked> Todas</label><br>
+                        <label><input type="radio" name="categoryFilter" value="cuidado"> Cuidado personal </label><br>
+                        <label><input type="radio" name="categoryFilter" value="hogar"> Hogar sostenible</label><br>
+                        <label><input type="radio" name="categoryFilter" value="alimentos"> Alimentos y bienestar</label>
+                    </fieldset>
+
+                    <div class="acciones">
+                        <button type="submit">Aplicar</button>
+                        <button type="reset" id="clearFilters">Limpiar</button>
+                    </div>
+                </form>
+            </aside>
+            <div class="listado">
+                <div class="listado-top">
+                    <h2>Nuestros Productos</h2>
+                    <span class="count" aria-live="polite"><strong id="resultsCount">3</strong> resultados</span>
+                </div>
+
+                <!-- Botonera movida al filtro (radio inputs) -->
+
+                <div class="contenedor-productos">
+                    <div class="grupo-categoria active" data-group="cuidado">
+                        <div class="grid-categoria">
+                    <!-- CUIDADO PERSONAL ECOLÓGICO -->
+                    <div class="producto" data-category="cuidado" data-price="350" data-description="Limpieza natural que fortalece y revitaliza el cabello sin sulfatos ni químicos agresivos.">
+                        <img src="imagenes/cuidado-champu-solido.jpg" alt="Champú sólido de romero y menta">
+                        <h3>Champú sólido de romero y menta</h3>
+                        <p>Precio: RD$350</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="380" data-description="Nutre e hidrata profundamente, dejando el cabello suave y manejable.">
+                        <img src="imagenes/cuidado-acondicionador-coco.jpg" alt="Acondicionador natural de coco">
+                        <h3>Acondicionador natural de coco</h3>
+                        <p>Precio: RD$380</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="220" data-description="Limpia suavemente la piel mientras la hidrata con ingredientes naturales.">
+                        <img src="imagenes/cuidado-jabon-avena-miel.jpg" alt="Jabón artesanal de avena y miel">
+                        <h3>Jabón artesanal de avena y miel</h3>
+                        <p>Precio: RD$220</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="290" data-description="Protección duradera con ingredientes vegetales y fragancia fresca.">
+                        <img src="imagenes/cuidado-desodorante-ecologico.jpg" alt="Desodorante ecológico sin aluminio">
+                        <h3>Desodorante ecológico sin aluminio</h3>
+                        <p>Precio: RD$290</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="320" data-description="Aporta suavidad y frescura, ideal para todo tipo de piel.">
+                        <img src="imagenes/cuidado-crema-aloe.jpg" alt="Crema hidratante con aloe vera">
+                        <h3>Crema hidratante con aloe vera</h3>
+                        <p>Precio: RD$320</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="400" data-description="Nutre y suaviza la piel con propiedades antioxidantes.">
+                        <img src="imagenes/cuidado-aceite-almendra.jpg" alt="Aceite corporal de almendra dulce">
+                        <h3>Aceite corporal de almendra dulce</h3>
+                        <p>Precio: RD$400</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="450" data-description="Repara el daño capilar y devuelve el brillo natural.">
+                        <img src="imagenes/cuidado-mascarilla-argan-karite.jpg" alt="Mascarilla capilar de argán y karité">
+                        <h3>Mascarilla capilar de argán y karité</h3>
+                        <p>Precio: RD$450</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="120" data-description="Alternativa ecológica con cerdas suaves y mango biodegradable.">
+                        <img src="imagenes/cuidado-cepillo-bambu.jpg" alt="Cepillo dental de bambú">
+                        <h3>Cepillo dental de bambú</h3>
+                        <p>Precio: RD$120</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="180" data-description="Hidrata y protege los labios con ingredientes 100% naturales.">
+                        <img src="imagenes/cuidado-balsamo-cacao.jpg" alt="Bálsamo labial natural de cacao">
+                        <h3>Bálsamo labial natural de cacao</h3>
+                        <p>Precio: RD$180</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="cuidado" data-price="260" data-description="Relajación natural para cuerpo y mente, ideal para baños aromáticos.">
+                        <img src="imagenes/cuidado-sales-lavanda.jpg" alt="Sales de baño con lavanda">
+                        <h3>Sales de baño con lavanda</h3>
+                        <p>Precio: RD$260</p>
+                        <button>Ver detalles</button>
+                    </div>
+                        </div>
+                    </div>
+
+                    <div class="grupo-categoria" data-group="hogar">
+                        <div class="grid-categoria">
+                    <!-- HOGAR SOSTENIBLE -->
+                    <div class="producto" data-category="hogar" data-price="380" data-description="Limpieza eficaz sin dañar el ambiente.">
+                        <img src="imagenes/hogar-detergente-biodegradable.jpg" alt="Detergente biodegradable EcoLimpio">
+                        <h3>Detergente biodegradable EcoLimpio</h3>
+                        <p>Precio: RD$380</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="300" data-description="Fórmula ecológica con aroma a cítricos, libre de tóxicos.">
+                        <img src="imagenes/hogar-limpiador-multiusos.jpg" alt="Limpiador multiusos natural">
+                        <h3>Limpiador multiusos natural</h3>
+                        <p>Precio: RD$300</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="280" data-description="Iluminan y perfuman el hogar con aceites esenciales.">
+                        <img src="imagenes/hogar-velas-soja.jpg" alt="Velas aromáticas de soja">
+                        <h3>Velas aromáticas de soja</h3>
+                        <p>Precio: RD$280</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="150" data-description="Resistentes, prácticas y 100% libres de plástico.">
+                        <img src="imagenes/hogar-bolsas-tela.jpg" alt="Bolsas de tela reutilizables EcoBag RD">
+                        <h3>Bolsas de tela reutilizables EcoBag RD</h3>
+                        <p>Precio: RD$150</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="160" data-description="Suaves, duraderas y completamente biodegradables.">
+                        <img src="imagenes/hogar-esponjas-compostables.jpg" alt="Esponjas compostables de celulosa vegetal">
+                        <h3>Esponjas compostables de celulosa vegetal</h3>
+                        <p>Precio: RD$160</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="220" data-description="Diseño ergonómico y sostenible para limpiar sin plástico.">
+                        <img src="imagenes/hogar-cepillo-platos-bambu.jpg" alt="Cepillo para platos de bambú">
+                        <h3>Cepillo para platos de bambú</h3>
+                        <p>Precio: RD$220</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="200" data-description="Refresca el ambiente con una fragancia floral y natural.">
+                        <img src="imagenes/hogar-ambientador-lavanda.jpg" alt="Ambientador natural de lavanda">
+                        <h3>Ambientador natural de lavanda</h3>
+                        <p>Precio: RD$200</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="180" data-description="Reutilizables y absorbentes, ideales para el hogar.">
+                        <img src="imagenes/hogar-panos-algodon.jpg" alt="Paños ecológicos de algodón orgánico">
+                        <h3>Paños ecológicos de algodón orgánico</h3>
+                        <p>Precio: RD$180</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="320" data-description="Alternativa sostenible para comidas y eventos.">
+                        <img src="imagenes/hogar-platos-biodegradables.jpg" alt="Platos biodegradables de fibra vegetal">
+                        <h3>Platos biodegradables de fibra vegetal</h3>
+                        <p>Precio: RD$320</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="hogar" data-price="850" data-description="Mantiene la temperatura de tus bebidas sin generar residuos.">
+                        <img src="imagenes/hogar-botella-acero.jpg" alt="Botella reutilizable de acero inoxidable">
+                        <h3>Botella reutilizable de acero inoxidable</h3>
+                        <p>Precio: RD$850</p>
+                        <button>Ver detalles</button>
+                    </div>
+                        </div>
+                    </div>
+
+                   <div class="grupo-categoria" data-group="alimentos">
+                    <div class="grid-categoria">
+                      <!-- ALIMENTOS Y BIENESTAR -->
+                         <div class="producto" data-category="alimentos" data-price="260" data-description="Energizante natural con propiedades antioxidantes.">
+                        <img src="imagenes/alimentos-te-verde-jengibre.jpg" alt="Té verde orgánico con jengibre">
+                        <h3>Té verde orgánico con jengibre</h3>
+                        <p>Precio: RD$260</p>
+                        <button>Ver detalles</button>
+                       </div>
+                    <div class="producto" data-category="alimentos" data-price="240" data-description="Ideal para descansar y aliviar el estrés.">
+                        <img src="imagenes/alimentos-infusion-manzanilla-menta.jpg" alt="Infusión relajante de manzanilla y menta">
+                        <h3>Infusión relajante de manzanilla y menta</h3>
+                        <p>Precio: RD$240</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="420" data-description="Puro, versátil y saludable para cocinar o hidratar.">
+                        <img src="imagenes/alimentos-aceite-coco.jpg" alt="Aceite de coco prensado en frío">
+                        <h3>Aceite de coco prensado en frío</h3>
+                        <p>Precio: RD$420</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="280" data-description="Deliciosos, naturales y sin conservantes.">
+                        <img src="imagenes/alimentos-snacks-frutas.jpg" alt="Snacks de frutas deshidratadas">
+                        <h3>Snacks de frutas deshidratadas</h3>
+                        <p>Precio: RD$280</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="350" data-description="Endulzante natural con múltiples beneficios para la salud.">
+                        <img src="imagenes/alimentos-miel-artesanal.jpg" alt="Miel pura artesanal">
+                        <h3>Miel pura artesanal</h3>
+                        <p>Precio: RD$350</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="320" data-description="Fuente de energía natural y rica en fibra.">
+                        <img src="imagenes/alimentos-granola.jpg" alt="Granola artesanal con nueces y semillas">
+                        <h3>Granola artesanal con nueces y semillas</h3>
+                        <p>Precio: RD$320</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="260" data-description="Ideal para desayunos nutritivos y recetas saludables.">
+                        <img src="imagenes/alimentos-avena-organica.jpg" alt="Avena orgánica integral">
+                        <h3>Avena orgánica integral</h3>
+                        <p>Precio: RD$260</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="480" data-description="Alternativa sin gluten para postres y panes saludables.">
+                        <img src="imagenes/alimentos-harina-almendra.jpg" alt="Harina de almendra ecológica">
+                        <h3>Harina de almendra ecológica</h3>
+                        <p>Precio: RD$480</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="550" data-description="Rico en proteínas, hierro y antioxidantes.">
+                        <img src="imagenes/alimentos-espirulina.jpg" alt="Suplemento vegetal de espirulina">
+                        <h3>Suplemento vegetal de espirulina</h3>
+                        <p>Precio: RD$550</p>
+                        <button>Ver detalles</button>
+                    </div>
+                    <div class="producto" data-category="alimentos" data-price="300" data-description="Snack saludable para el día a día.">
+                        <img src="imagenes/alimentos-barras-energeticas.jpg" alt="Barras energéticas naturales de cacao y avena">
+                        <h3>Barras energéticas naturales de cacao y avena</h3>
+                        <p>Precio: RD$300</p>
+                        <button>Ver detalles</button>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<section class="sobre nosotros">
+  <h2>Sobre Nosotros</h2>
+  <p>EcoStyle RD es una empresa dominicana fundada en el año 2016, dedicada a la venta de productos ecológicos y sostenibles. Desde sus inicios, nació con la visión de crear una alternativa responsable para el consumo diario, ofreciendo productos que cuidan tanto la salud y bienestar de las personas como la protección del medio ambiente.
+</p>
+</section>
+
+        
+
+    </main>
+    <footer class="site-footer" role="contentinfo">
+  <div class="footer-top">
+    <div class="footer-col">
+      <h3>EcoStyle RD</h3>
+      <p>Productos ecológicos y sostenibles para un estilo de vida consciente.</p>
+      <ul class="socials">
+        <li><a href="https://www.facebook.com/share/17ec8o2T91/" aria-label="Facebook">Fb</a></li>
+        <li><a href="https://www.instagram.com/share/17ec8o2T91/" aria-label="Instagram">Ig</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="EcoStyleRD.html">Inicio</a></li>
+        <li><a href="acerca.html">Sobre nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul class="contact">
+        <li>Email: contacto@ecostyle.rd</li>
+        <li>Tel: +1 (809) 000-0000</li>
+        <li>Santo Domingo, RD</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 EcoStyleRD · Todos los derechos reservados · Hecho con 💚 pensando en el planeta</p>
+  </div>
+</footer>
+    <!-- Modal de detalles de producto -->
+    <div id="productModal" class="product-modal" aria-hidden="true">
+        <div class="product-modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" aria-label="Cerrar">×</button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle">Título del producto</h2>
+                    <p id="modalPrice">Precio: RD$0</p>
+                    <p id="modalDesc">Descripción detallada del producto.</p>
+                    <div class="modal-actions">
+                        <button id="modalBuy" class="btn-buy">Cancelar</button>
+                        <a id="modalMore" href="#" class="btn-servicio">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="JAVASCRIPT/search.js"></script>
+<script src="JAVASCRIPT/product-details.js"></script>
+<script>
+// Activar categorías usando los radios dentro del filtro
+const categoryRadios = Array.from(document.querySelectorAll('input[name="categoryFilter"]'));
+const groups = Array.from(document.querySelectorAll('.grupo-categoria'));
+
+console.log('DEBUG categories: radios=', categoryRadios.length, 'groups=', groups.length);
+
+function setActiveCategory(category) {
+    console.log('setActiveCategory ->', category);
+    groups.forEach(g => {
+        const gName = g.getAttribute('data-group');
+        const willBeActive = (category === 'all' || gName === category);
+        if (willBeActive) {
+            g.classList.add('active');
+            g.style.display = '';
+            g.setAttribute('aria-hidden','false');
+        } else {
+            g.classList.remove('active');
+            g.style.display = 'none';
+            g.setAttribute('aria-hidden','true');
+        }
+        console.log('  group', gName, 'active?', g.classList.contains('active'), 'style.display=', g.style.display);
+    });
+}
+
+// Inicializar: preferir un grupo ya activo; si no, usar el radio seleccionado o el primer grupo
+(function initCategories(){
+    console.log('initCategories running');
+    const anyActive = groups.find(g => g.classList.contains('active'));
+    if (anyActive) { console.log('Found pre-active group', anyActive.getAttribute('data-group')); return; }
+
+    const checked = categoryRadios.find(r => r.checked);
+    if (checked) {
+        console.log('Radio checked on load:', checked.value);
+        setActiveCategory(checked.value);
+        return;
+    }
+    if (groups.length) {
+        const first = groups[0].getAttribute('data-group');
+        console.log('No active group or checked radio, defaulting to', first);
+        setActiveCategory(first);
+    }
+})();
+
+// Mostrar/ocultar categorías inmediatamente al cambiar el radio
+categoryRadios.forEach(r => {
+    r.addEventListener('change', () => {
+        console.log('radio change ->', r.value);
+        setActiveCategory(r.value);
+    });
+});
+
+</script>
+<script>
+// Aplicar filtros al enviar el formulario (no cambiar inmediatamente al seleccionar radio)
+const filtersForm = document.getElementById('filters');
+if (filtersForm) {
+    filtersForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        const selected = document.querySelector('input[name="categoryFilter"]:checked');
+        const value = selected ? selected.value : 'all';
+        console.log('Aplicar filtros - categoría seleccionada:', value);
+        setActiveCategory(value);
+        // Aquí pueden agregarse otras acciones de filtrado (precio, búsqueda)
+    });
+
+    // Al resetear, volver a 'all' y mostrar todo
+    const clearBtn = document.getElementById('clearFilters');
+    if (clearBtn) {
+        clearBtn.addEventListener('click', function(){
+            // Dejar un pequeño retardo para que el navegador aplique el reset
+            setTimeout(()=> setActiveCategory('all'), 0);
+        });
+    }
+}
+</script>
+</body>
+</html>

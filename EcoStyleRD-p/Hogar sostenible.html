@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogar sostenible - EcoStyle RD</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="IMAGENES/ECOSTYLE.png" alt="Logo de EcoStyleRD">
+    </div>
+    <nav class="menu">
+      <a href="inicio nuevo.html" class="btn-inicio">Inicio</a>
+      <a href="acerca.html" class="btn-acerca">Acerca de</a>
+      <a href="servicios.html" class="btn-servicios">Nuestros Servicios</a>
+      <a href="contacto.html" class="btn-contacto">Contáctanos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalogo">
+      <aside class="filtros">
+        <form id="filters">
+          <h2>Filtrar</h2>
+          <input type="search" id="q" name="q" placeholder="Buscar por nombre..." aria-label="Buscar por nombre">
+          <select id="category" name="category" style="display:none">
+            <option value="hogar" selected>Hogar sostenible</option>
+          </select>
+          <label for="price" class="price-label">Precio máx: RD$ <output id="priceOut">1000</output></label>
+          <input type="range" id="price" name="price" min="0" max="1000" step="50" value="1000">
+          <select id="sort" name="sort">
+            <option value="relevancia">Ordenar por: Relevancia</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+            <option value="nombre-desc">Nombre: Z-A</option>
+          </select>
+          <div class="acciones">
+            <button type="submit">Aplicar</button>
+            <button type="reset" id="clearFilters">Limpiar</button>
+          </div>
+        </form>
+      </aside>
+
+      <div class="listado">
+        <div class="listado-top">
+          <h2>Hogar sostenible</h2>
+          <span class="count" aria-live="polite"><strong id="resultsCount">10</strong> resultados</span>
+        </div>
+        <div class="contenedor-productos">
+          <div class="producto" data-category="hogar" data-price="380">
+            <img src="imagenes/hogar-detergente-biodegradable.jpg" alt="Detergente biodegradable “EcoLimpio”">
+            <h3>Detergente biodegradable “EcoLimpio”</h3>
+            <p>Precio: RD$380</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="300">
+            <img src="imagenes/hogar-limpiador-multiusos.jpg" alt="Limpiador multiusos natural">
+            <h3>Limpiador multiusos natural</h3>
+            <p>Precio: RD$300</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="280">
+            <img src="imagenes/hogar-velas-soja.jpg" alt="Velas aromáticas de soja">
+            <h3>Velas aromáticas de soja</h3>
+            <p>Precio: RD$280</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="150">
+            <img src="imagenes/hogar-bolsas-tela.jpg" alt="Bolsas de tela reutilizables “EcoBag RD”">
+            <h3>Bolsas de tela reutilizables “EcoBag RD”</h3>
+            <p>Precio: RD$150</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="160">
+            <img src="imagenes/hogar-esponjas-compostables.jpg" alt="Esponjas compostables de celulosa vegetal">
+            <h3>Esponjas compostables de celulosa vegetal</h3>
+            <p>Precio: RD$160</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="220">
+            <img src="imagenes/hogar-cepillo-platos-bambu.jpg" alt="Cepillo para platos de bambú">
+            <h3>Cepillo para platos de bambú</h3>
+            <p>Precio: RD$220</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="200">
+            <img src="imagenes/hogar-ambientador-lavanda.jpg" alt="Ambientador natural de lavanda">
+            <h3>Ambientador natural de lavanda</h3>
+            <p>Precio: RD$200</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="180">
+            <img src="imagenes/hogar-panos-algodon.jpg" alt="Paños ecológicos de algodón orgánico">
+            <h3>Paños ecológicos de algodón orgánico</h3>
+            <p>Precio: RD$180</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="320">
+            <img src="imagenes/hogar-platos-biodegradables.jpg" alt="Platos biodegradables de fibra vegetal">
+            <h3>Platos biodegradables de fibra vegetal</h3>
+            <p>Precio: RD$320</p>
+            <button>Ver detalles</button>
+          </div>
+          <div class="producto" data-category="hogar" data-price="850">
+            <img src="imagenes/hogar-botella-acero.jpg" alt="Botella reutilizable de acero inoxidable">
+            <h3>Botella reutilizable de acero inoxidable</h3>
+            <p>Precio: RD$850</p>
+            <button>Ver detalles</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p>© 2025 EcoStyleRD · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="JAVASCRIPT/search.js"></script>
+</body>
+</html>
+

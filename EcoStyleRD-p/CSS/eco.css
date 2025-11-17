@@ -1,0 +1,126 @@
+/* ✅ Fondo y acomodo del body para que el login no choque con el logo */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #a8e6cf, #dcedc1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding-top: 160px; /* 📌 empuja el login hacia abajo */
+}
+
+/* ✅ Header para este login */
+.login-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ✅ Logo ajustado tamaño mediano/grande */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px; /* 📌 tamaño que pediste */
+  width: auto;
+}
+
+.logo h1 {
+  font-size: 26px;
+  margin-left: 10px;
+  color: #2e8b57;
+  font-weight: bold;
+}
+
+/* ✅ Link volver */
+.textinicio a {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e8b57;
+  text-decoration: none;
+}
+
+.textinicio a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Caja login */
+.login-container {
+  background: white;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 350px;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #2e8b57;
+  margin-bottom: 20px;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-container label {
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.login-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-container input:focus {
+  border-color: #2e8b57;
+  outline: none;
+}
+
+/* ✅ Botón */
+.btn-login {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: #1c5f3c;
+}
+
+/* ✅ Enlace registro */
+.login-container p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-container a {
+  color: #2e8b57;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-container a:hover {
+  text-decoration: underline;
+}

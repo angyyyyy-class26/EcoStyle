@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | EcoStyle RD</title>
+  <link rel="stylesheet" href="CSS/eco.css">
+</head>
+<body>
+
+<header class="login-header">
+  <div class="logo">
+    <img src="IMAGENES/ECOSTYLE.png" alt="Logo EcoStyleRD">
+    <h1>EcoStyle RD</h1>
+  </div>
+</header>
+
+<div class="login-container">
+  <h2>Crear Cuenta</h2>
+
+  <form action="registro.php" method="POST">
+
+    <label>Nombre completo:</label>
+    <input name="NOMBRE" placeholder="Tu nombre" required>
+
+    <label>Correo electrónico:</label>
+    <input name="CORREO" placeholder="ejemplo@gmail.com" required>
+
+    <label>Teléfono:</label>
+    <input name="TELEFONO" placeholder="8090000000" required>
+
+    <label>Contraseña:</label>
+    <input name="CONTRASENA" type="password" placeholder="Crea tu contraseña" required>
+
+    <label>Confirmar contraseña:</label>
+    <input name="CONFIRMAR" type="password" placeholder="Repite la contraseña" required>
+
+    <button type="submit" class="btn-login" name="registro">Registrarme</button>
+  </form>
+</div>
+
+
+</body>
+</html>

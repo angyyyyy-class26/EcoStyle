@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimentos y bienestar - EcoStyle RD</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+   <header>
+  <div class="logo">
+    <img src="IMAGENES/ECOSTYLE.png" alt="Logo de EcoStyleRD">
+  </div>
+  <nav class="menu">
+    <a href="EcoStyleRD.html" class="btn-inicio">Inicio</a>
+    <a href="acerca.html" class="btn-acerca">sobre nosotros</a>
+    <a href="servicios.html" class="btn-servicios">Nuestros Servicios</a>
+    <a href="contacto.html" class="btn-contacto">Contáctanos</a>
+    
+
+  </nav>
+  </header>
+
+  <main>
+    <section class="catalogo">
+      <aside class="filtros">
+        <form id="filters">
+          <h2>Filtrar</h2>
+          <input type="search" id="q" name="q" placeholder="Buscar por nombre..." aria-label="Buscar por nombre">
+          <!-- categoría fija para esta página -->
+          <select id="category" name="category" style="display:none">
+            <option value="alimentos" selected>Alimentos y bienestar</option>
+          </select>
+          <label for="price" class="price-label">Precio máx: RD$ <output id="priceOut">1000</output></label>
+          <input type="range" id="price" name="price" min="0" max="1000" step="50" value="1000">
+          <select id="sort" name="sort" aria-label="Ordenar">
+            <option value="relevancia">Ordenar por: Relevancia</option>
+            <option value="precio-asc">Precio: menor a mayor</option>
+            <option value="precio-desc">Precio: mayor a menor</option>
+            <option value="nombre-asc">Nombre: A-Z</option>
+            <option value="nombre-desc">Nombre: Z-A</option>
+          </select>
+          <div class="acciones">
+            <button type="submit">Aplicar</button>
+            <button type="reset" id="clearFilters">Limpiar</button>
+          </div>
+        </form>
+      </aside>
+
+      <div class="listado">
+        <div class="listado-top">
+          <h2>Alimentos y bienestar</h2>
+          <span class="count" aria-live="polite"><strong id="resultsCount">10</strong> resultados</span>
+        </div>
+
+      <div class="contenedor-productos">
+        <div class="producto" data-category="alimentos" data-price="260">
+          <img src="IMAGENES/alimentos-te-verde-jengibre.jpg" alt="Té verde orgánico con jengibre">
+          <h3>Té verde orgánico con jengibre</h3>
+          <p>Precio: RD$260</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="240">
+          <img src="IMAGENES/alimentos-infusion-manzanilla-menta.jpg" alt="Infusión relajante de manzanilla y menta">
+          <h3>Infusión relajante de manzanilla y menta</h3>
+          <p>Precio: RD$240</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="420">
+          <img src="IMAGENES/alimentos-aceite-coco.jpg" alt="Aceite de coco prensado en frío">
+          <h3>Aceite de coco prensado en frío</h3>
+          <p>Precio: RD$420</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="280">
+          <img src="IMAGENES/alimentos-snacks-frutas.jpg" alt="Snacks de frutas deshidratadas">
+          <h3>Snacks de frutas deshidratadas</h3>
+          <p>Precio: RD$280</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="350">
+          <img src="IMAGENES/alimentos-miel-artesanal.jpg" alt="Miel pura artesanal">
+          <h3>Miel pura artesanal</h3>
+          <p>Precio: RD$350</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="320">
+          <img src="IMAGENES/alimentos-granola.jpg" alt="Granola artesanal con nueces y semillas">
+          <h3>Granola artesanal con nueces y semillas</h3>
+          <p>Precio: RD$320</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="260">
+          <img src="IMAGENES/alimentos-avena-organica.jpg" alt="Avena orgánica integral">
+          <h3>Avena orgánica integral</h3>
+          <p>Precio: RD$260</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="480">
+          <img src="IMAGENES/alimentos-harina-almendra.jpg" alt="Harina de almendra ecológica">
+          <h3>Harina de almendra ecológica</h3>
+          <p>Precio: RD$480</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="550">
+          <img src="IMAGENES/alimentos-espirulina.jpg" alt="Suplemento vegetal de espirulina">
+          <h3>Suplemento vegetal de espirulina</h3>
+          <p>Precio: RD$550</p>
+          <button>Ver detalles</button>
+        </div>
+        <div class="producto" data-category="alimentos" data-price="300">
+          <img src="IMAGENES/alimentos-barras-energeticas.jpg" alt="Barras energéticas naturales de cacao y avena">
+          <h3>Barras energéticas naturales de cacao y avena</h3>
+          <p>Precio: RD$300</p>
+          <button>Ver detalles</button>
+        </div>
+      </div>
+      <nav class="paginacion" aria-label="Paginación de productos">
+        <button class="prev" disabled>Anterior</button>
+        <span>Página 1</span>
+        <button class="next" disabled>Siguiente</button>
+      </nav>
+    </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-bottom">
+      <p>© 2025 EcoStyleRD · Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <!-- Modal de detalles de producto -->
+    <div id="productModal" class="product-modal" aria-hidden="true">
+        <div class="product-modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" aria-label="Cerrar">×</button>
+            <div class="modal-grid">
+                <div class="modal-image">
+                    <img id="modalImg" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTitle">Título del producto</h2>
+                    <p id="modalPrice">Precio: RD$0</p>
+                    <p id="modalDesc">Descripción detallada del producto.</p>
+                    <div class="modal-actions">
+                        <button id="modalBuy" class="btn-buy">Cancelar</button>
+                        <a id="modalMore" href="#" class="btn-servicio">🌱</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="JAVASCRIPT/search.js"></script>
+  <script src="JAVASCRIPT/product-details.js"></script>
+</body>
+</html>
+
